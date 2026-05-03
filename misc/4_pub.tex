@@ -1,0 +1,55 @@
+%%
+% USTBThesis 研究生学位论文模板 The USTBThesis Template for Graduate Thesis
+% This file has no copyright assigned and is placed in the Public Domain.
+%%
+
+% ==== 攻读学位期间发表论文与研究成果清单 ====
+% 1. 在 `../reference/pub.bib` 中添加数据。
+% 2. 在本文件下方 `\addpubs` 添加该文献（参考下方示例）。
+
+% **注意：如果发现渲染出来的文献编号不正确，请同时使用以下两个方式解决：**
+% 1. 请清除缓存重新编译，比如`latexmk -gg`，详见 https://bithesis.bitnp.net/faq/clean.html 。
+% 2. 请确保无编译错误。
+
+\chapter*{作者简历及在学研究成果}
+\addcontentsline{toc}{chapter}{作者简历及在学研究成果}
+
+\section*{一、主要教育经历/工作经历（从大学起，到硕士入学止）}
+
+\begin{table}[hbt]
+  \centering
+  \renewcommand{\arraystretch}{1.3}
+  \begin{tabular}{|p{0.30\textwidth}|p{0.48\textwidth}|p{0.14\textwidth}|}
+    \hline
+    \centering 起止年月 & \centering 学习或工作单位 & \centering 备注 \tabularnewline
+    \hline
+    \centering XXXX年XX月至XXXX年XX月 & 在XXXX学校XXXX专业攻读学士学位 & \tabularnewline
+    \hline
+    \centering XXXX年XX月至XXXX年XX月 & 在XXXX单位从事XXXX岗位工作 & \tabularnewline
+    \hline
+    \centering XXXX年XX月至XXXX年XX月 & 在XXXX学校XXXX专业攻读硕士学位 & \tabularnewline
+    \hline
+  \end{tabular}
+\end{table}
+
+\section*{二、在学期间从事的科研工作}
+
+\begin{enumerate}[label={（\arabic*）}, leftmargin=3em, itemsep=0.5\baselineskip]
+  \item 参与XXXX科研项目，主要负责XXXX，时间：XXXX年XX月--XXXX年XX月。
+  \item 参与XXXX课题研究，主要工作包括XXXX。
+\end{enumerate}
+
+\section*{三、在学期间所获的科研奖励}
+
+\begin{enumerate}[label={（\arabic*）}, leftmargin=3em, itemsep=0.5\baselineskip]
+  \item XXXX奖学金/XXXX奖励，XXXX年。
+\end{enumerate}
+
+\section*{四、在学期间发表的论文}
+
+\zihao{5}
+\begin{enumerate}[label={[\arabic*]}, leftmargin=3.2em, itemsep=0.6\baselineskip]
+  \item 作者1, 作者2, 作者3. 论文题目[J]. 期刊名称, 年份, 卷(期): 起止页码.
+  \item 作者1, 作者2, 作者3. 论文题目[J]. 期刊名称, 年份, 卷(期): 起止页码.
+  \item 作者1, 作者2, 作者3. 论文题目[C]. 会议名称, 年份: 起止页码.
+\end{enumerate}
