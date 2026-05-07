@@ -2571,13 +2571,6 @@
       \ctexset{ autoindent = 2 }
     }
 
-    % 摘要对页数很敏感，标题上下间距应有弹性；其中硕博模板的基础长度参考 Word 实作微调过。
-    \ctexset{ chapter = {
-      % 章级标题段前 17 磅、段后 16.5 磅
-      beforeskip = \__ustbthesis_if_graduate:TF {17bp} {8bp},
-      afterskip = \__ustbthesis_if_graduate:TF {16.5bp} {32bp minus 24bp},
-    } }
-
     {
       \__ustbthesis_same_page:
 
@@ -2637,7 +2630,7 @@
 
     \__ustbthesis_if_graduate:TF {
       \ctexset{
-        chapter/titleformat = {\heiti\zihao{-3}\centering\textbf}
+        chapter/titleformat = {\heiti\fontsize{15bp}{22.5bp}\selectfont\centering\textbf}
       }
     } {
       \ctexset {
@@ -2645,27 +2638,28 @@
       }
     }
 
-    % 摘要对页数很敏感，标题上下间距应有弹性；其中硕博模板的基础长度参考 Word 实作微调过。
-    \ctexset{ chapter = {
-      % 章级标题段前 17 磅、段后 16.5 磅
-      beforeskip = \__ustbthesis_if_graduate:TF {17bp} {8bp},
-      afterskip = \__ustbthesis_if_graduate:TF {16.5bp} {32bp minus 24bp},
-    } }
-
     {
       \__ustbthesis_same_page:
 
       % 硕博模板先单独输出英文题目，摘要标题固定为“Abstract”
       \__ustbthesis_if_graduate:T {
-        \begin{spacing}{0.95}
-          \centering
-          {
-            \__ustbthesis_title_font:
-            \zihao{3}\textbf
-            \l__ustbthesis_value_title_en_tl\par
+        {
+          \ctexset{
+            chapter = {
+              titleformat = {
+                \__ustbthesis_title_font:
+                \bfseries
+                \zihao{-3}\linespread{2.4}\selectfont
+              },
+              beforeskip = 17bp,
+              afterskip = 16.5bp,
+            }
           }
-        \end{spacing}
-        \vspace*{10mm minus 8mm}
+          \chapter*{\l__ustbthesis_value_title_en_tl}
+        }
+        \ctexset{
+          chapter/titleformat = {\heiti\fontsize{15bp}{22.5bp}\selectfont\centering\textbf}
+        }
       }
       \__ustbthesis_if_graduate:TF {
         \tl_set:Nn \l_tmpa_tl {ABSTRACT}
